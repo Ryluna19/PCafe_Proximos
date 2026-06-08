@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cafe Curator</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+   <script src="stuff.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  
+</script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>☕️ Cafe Curator 🍵</h1>
+  <p>Find and save the best cafes near you.</p>
+
+  <div>
+    <button onclick="getLocation()">Find Cafes Near Me</button>
+    <button onclick="showSaved()">Show Saved Cafes</button>
+  </div>
+  <div id="map" style="display:none;"></div>
+
+  <div class="cards"></div>
+ </body>
+</html>
