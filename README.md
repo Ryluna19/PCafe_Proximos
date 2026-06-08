@@ -25,11 +25,11 @@ Cafe Curator é uma aplicação web que ajuda usuários a descobrir cafeterias p
 
 ### Página Inicial
 
-<img width="787" height="625" alt="Captura de tela_8-6-2026_145235_" src="https://github.com/user-attachments/assets/2b0af795-5891-44db-9bcc-0274bd15a7a5" />
+<img width="760" height="774" alt="Captura de tela_8-6-2026_145220_" src="https://github.com/user-attachments/assets/4ccd8720-88e6-44f3-a8f1-8fd7f91ec050" />
 
 ### Lista de Favoritos
 
-<img width="760" height="774" alt="Captura de tela_8-6-2026_145220_" src="https://github.com/user-attachments/assets/4ccd8720-88e6-44f3-a8f1-8fd7f91ec050" />
+<img width="787" height="625" alt="Captura de tela_8-6-2026_145235_" src="https://github.com/user-attachments/assets/2b0af795-5891-44db-9bcc-0274bd15a7a5" />
 
 
 ## 💡 Objetivo do Projeto
