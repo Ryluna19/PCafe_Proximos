@@ -1,6 +1,6 @@
 ## 🌐 Demo
 
-https://ryluna19.github.io/PCafe_Proximos/
+https://ryluna19.github.io/PCafe_Proximos/index.html
 
 # ☕ Cafe Curator
 
