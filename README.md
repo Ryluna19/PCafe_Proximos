@@ -1,6 +1,6 @@
 ## 🌐 Demo
 
-https://seuusuario.github.io/cafe-curator/
+(https://ryansantos.github.io/cafe-curator/)
 
 # ☕ Cafe Curator
 
