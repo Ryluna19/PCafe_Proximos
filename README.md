@@ -1,6 +1,8 @@
 ## 🌐 Demo
 
-[☕ Abrir Cafe Curator](https://ryluna19.github.io/PCafe_Proximos/index.html)
+<a href="https://ryluna19.github.io/PCafe_Proximos/index.html" target="_blank">
+    Abrir Cafe Curator
+</a>
 
 # ☕ Cafe Curator
 
