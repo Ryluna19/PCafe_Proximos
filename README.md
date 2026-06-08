@@ -1,6 +1,7 @@
 ## 🌐 Demo
 
-(https://ryansantos.github.io/cafe-curator/)
+(https://ryansantos.github.io/PCafe_Proximos
+/)
 
 # ☕ Cafe Curator
 
