@@ -1,3 +1,7 @@
+## 🌐 Demo
+
+https://seuusuario.github.io/cafe-curator/
+
 # ☕ Cafe Curator
 
 Cafe Curator é uma aplicação web que ajuda usuários a descobrir cafeterias próximas utilizando geolocalização. Os resultados são apresentados em um sistema de cards com interação por swipe, permitindo salvar estabelecimentos favoritos para consulta futura.
