@@ -1,27 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+  <!-- Configurações básicas da página -->
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Cafe Curator</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-   <script src="stuff.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
-  
-</script>
-  
+
+  <!-- Ícone simples do projeto -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️</text></svg>">
+  <!-- Fontes utilizadas no layout -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- CSS principal -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Biblioteca usada para detectar swipe nos cards -->
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <!-- Script principal do projeto -->
+  <script src="stuff.js" defer></script>
 </head>
+
 <body>
-  <h1>☕️ Cafe Curator 🍵</h1>
-  <p>Find and save the best cafes near you.</p>
+  <main class="app-shell">
+    <!-- Cabeçalho principal do app -->
+    <section class="hero">
+      <p class="eyebrow">Localização • cafés • favoritos</p>
 
-  <div>
-    <button onclick="getLocation()">Find Cafes Near Me</button>
-    <button onclick="showSaved()">Show Saved Cafes</button>
-  </div>
-  <div id="map" style="display:none;"></div>
+      <h1>
+        <span class="logo">☕</span>
+        Cafe Curator
+      </h1>
+      <meta name="description"
+        content="Cafe Curator is a JavaScript web app to discover, save and organize nearby cafes using geolocation and localStorage.">
 
-  <div class="cards"></div>
- </body>
+      <meta property="og:title" content="Cafe Curator">
+      <meta property="og:description"
+        content="Discover nearby cafes, save favorites and organize places with personal notes.">
+      <meta property="og:image" content="./assets/preview.png">
+
+      <p class="subtitle">
+        Descubra cafés próximos, salve seus favoritos e organize lugares que você quer visitar.
+      </p>
+
+      <!-- Ações principais -->
+      <div class="actions">
+        <button id="findCafesBtn" class="primary-btn js-main-action">
+          Encontrar cafés próximos
+        </button>
+
+        <button id="showSavedBtn" class="secondary-btn js-main-action">
+          Ver cafés salvos
+        </button>
+      </div>
+
+      <!-- Opções de busca -->
+      <section class="search-options" aria-label="Opções de busca">
+        <div class="option-group">
+          <label for="radiusSelect">Raio de busca</label>
+
+          <div class="radius-control">
+            <select id="radiusSelect">
+              <option value="1000">1 km</option>
+              <option value="3000">3 km</option>
+              <option value="5000" selected>5 km</option>
+              <option value="10000">10 km</option>
+              <option value="15000">15 km</option>
+              <option value="custom">Personalizado</option>
+            </select>
+
+            <input id="customRadius" class="hidden" type="number" min="1" max="50" placeholder="Km">
+          </div>
+        </div>
+
+        <div class="option-group">
+          <label for="sortSelect">Ordenar por</label>
+
+          <select id="sortSelect">
+            <option value="distance-asc" selected>Mais próximos</option>
+            <option value="distance-desc">Mais distantes</option>
+            <option value="name-asc">Nome A-Z</option>
+          </select>
+        </div>
+      </section>
+    </section>
+
+    <!-- Estatísticas rápidas -->
+    <section class="stats-panel" aria-label="Resumo dos cafés">
+      <article>
+        <strong id="foundCount">0</strong>
+        <span>encontrados</span>
+      </article>
+
+      <article>
+        <strong id="savedCount">0</strong>
+        <span>salvos</span>
+      </article>
+
+      <article>
+        <strong id="radiusLabel">5km</strong>
+        <span>raio de busca</span>
+      </article>
+    </section>
+
+    <!-- Mensagens de feedback para o usuário -->
+    <p id="message" class="message">
+      Clique em “Encontrar cafés próximos” para começar.
+    </p>
+
+    <!-- Ferramentas exibidas apenas na tela de salvos -->
+    <section id="savedToolbar" class="saved-toolbar hidden">
+      <input id="savedSearch" type="text" placeholder="Buscar por nome, cidade, endereço ou observação...">
+
+      <select id="savedStatusFilter" class="saved-filter">
+        <option value="all">Todos os status</option>
+        <option value="want">Quero visitar</option>
+        <option value="visited">Já visitei</option>
+        <option value="liked">Gostei</option>
+        <option value="avoid">Não voltaria</option>
+      </select>
+
+      <button id="clearSavedBtn" class="danger-btn">
+        Limpar salvos
+      </button>
+    </section>
+
+    <!-- Área onde os cards são renderizados via JavaScript -->
+    <section class="cards" aria-live="polite"></section>
+
+    <!-- Pequena descrição do projeto para quem acessar pelo portfólio -->
+    <section class="about-project">
+      <p class="eyebrow">Sobre o projeto</p>
+
+      <h2>Um buscador de cafés feito com JavaScript puro</h2>
+
+      <p>
+        O Cafe Curator usa geolocalização, consumo de API externa, filtros,
+        favoritos com localStorage e interações com cards para ajudar o usuário
+        a descobrir e organizar cafés próximos.
+      </p>
+
+      <div class="tech-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Geoapify API</span>
+        <span>localStorage</span>
+      </div>
+    </section>
+
+    <!-- Rodapé com links profissionais -->
+    <footer class="footer">
+      <p>Desenvolvido por Ryan Santos</p>
+
+      <div class="footer-links">
+        <a href="https://github.com/Ryluna19" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/ryan-bulhoes-santos-560b25225" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
+    </footer>
+  </main>
+</body>
+
 </html>

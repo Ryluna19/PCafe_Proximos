@@ -4,77 +4,126 @@
     Abrir Cafe Curator
 </a>
 
+
 # ☕ Cafe Curator
 
-Cafe Curator é uma aplicação web que ajuda usuários a descobrir cafeterias próximas utilizando geolocalização. Os resultados são apresentados em um sistema de cards com interação por swipe, permitindo salvar estabelecimentos favoritos para consulta futura.
+Cafe Curator is a location-based web application that helps users discover nearby cafes, save favorite places and organize them with personal notes.
 
-## 🚀 Funcionalidades
+The project was built with HTML, CSS and JavaScript, using the browser Geolocation API, Geoapify Places API and localStorage.
 
-* Obtenção da localização do usuário
-* Busca de cafeterias próximas utilizando Geoapify Places API
-* Interface baseada em cards
-* Swipe para aceitar ou ignorar sugestões
-* Salvamento de favoritos
-* Remoção de favoritos
-* Persistência de dados utilizando LocalStorage
+![Cafe Curator Preview](./assets/preview.png)
 
-## 🛠️ Tecnologias
+## 📌 About the Project
+
+Cafe Curator was created as a portfolio project focused on front-end fundamentals, API consumption and user interaction.
+
+The application allows users to search for cafes near their current location, adjust the search radius, sort results, save favorite cafes and manage saved places with personal status and notes.
+
+## 🚀 Features
+
+* Search for nearby cafes using geolocation
+* Custom search radius
+* Sort results by distance or name
+* Swipe cards to save or skip cafes
+* Save favorite cafes using localStorage
+* Filter saved cafes by name, city, address, notes or status
+* Add personal status to saved cafes
+* Add notes to saved cafes
+* Copy cafe address
+* Open cafe location on Google Maps
+* Responsive layout
+* Dark theme with orange visual identity
+
+## 🛠️ Technologies Used
 
 * HTML5
 * CSS3
-* JavaScript (ES6+)
+* JavaScript
 * Geoapify Places API
-* Hammer.js
-* LocalStorage
+* Browser Geolocation API
+* localStorage
+* HammerJS
 
-## 📷 Screenshots
+## 📸 Screenshots
 
-### Página Inicial
+### Home / Search
 
-<img width="760" height="774" alt="Captura de tela_8-6-2026_145220_" src="https://github.com/user-attachments/assets/4ccd8720-88e6-44f3-a8f1-8fd7f91ec050" />
+![Home Screenshot](./assets/screenshot-home.png)
 
-### Lista de Favoritos
+### Saved Cafes
 
-<img width="787" height="625" alt="Captura de tela_8-6-2026_145235_" src="https://github.com/user-attachments/assets/2b0af795-5891-44db-9bcc-0274bd15a7a5" />
+![Saved Cafes Screenshot](./assets/screenshot-saved.png)
 
+## 📂 Project Structure
 
-## 💡 Objetivo do Projeto
-
-Este projeto foi desenvolvido com o objetivo de praticar conceitos de desenvolvimento front-end, integração com APIs externas, manipulação do DOM, armazenamento local de dados e criação de interfaces interativas utilizando JavaScript puro.
-
-## ▶️ Como Executar
-
-Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/cafe-curator.git
+```text
+Cafe-Curator/
+├── assets/
+│   ├── preview.png
+│   ├── screenshot-home.png
+│   └── screenshot-saved.png
+├── index.html
+├── styles.css
+├── stuff.js
+├── README.md
+├── .gitignore
+└── .env.example
 ```
 
-Entre na pasta do projeto:
+## ⚙️ How to Run
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/Ryluna19/cafe-curator.git
+```
+
+2. Open the project folder:
 
 ```bash
 cd cafe-curator
 ```
 
-Abra o arquivo `index.html` ou execute um servidor local:
+3. Open `index.html` in your browser.
 
-```bash
-python -m http.server 8000
-```
+The browser may ask for location permission. Allow it to search for nearby cafes.
 
-Acesse:
+## 🔑 API Key Note
 
-```text
-http://localhost:8000
-```
+This project uses the Geoapify Places API.
 
-## 📚 Aprendizados
+Since this is a static HTML, CSS and JavaScript project, the API key is currently used on the front-end. For a real production environment, the recommended approach would be to restrict the API key by domain in the Geoapify dashboard or move the request logic to a back-end service.
 
-Durante o desenvolvimento deste projeto foram praticados:
+An `.env.example` file is included only as documentation for future improvements.
 
-* Consumo de APIs REST
-* Geolocalização no navegador
-* Manipulação dinâmica de elementos HTML
-* Eventos e interação do usuário
-* Persistência de dados com LocalStorage
-* Organização de código JavaScript
+## 🧠 What I Practiced
+
+With this project, I practiced:
+
+* Consuming external APIs
+* Working with geolocation
+* Rendering dynamic content with JavaScript
+* Managing data with localStorage
+* Creating reusable functions
+* Handling user interactions
+* Building responsive layouts
+* Improving UI/UX with a consistent visual identity
+* Organizing a project for GitHub
+
+## 📌 Future Improvements
+
+Possible improvements for future versions:
+
+* Use a back-end to protect the API key
+* Add real cafe images when available from an API
+* Add categories beyond cafes
+* Add a map view
+* Improve accessibility
+* Add automated tests
+
+## 👨‍💻 Author
+
+Developed by Ryan Santos.
+
+* GitHub: [github.com/Ryluna19](https://github.com/Ryluna19)
+* LinkedIn: [Ryan Santos](https://www.linkedin.com/in/ryan-bulhoes-santos-560b25225)
