@@ -75,7 +75,7 @@ Cafe-Curator/
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/Ryluna19/cafe-curator.git
+git clone https://github.com/Ryluna19/PCafe_Proximos.git
 ```
 
 2. Open the project folder:
